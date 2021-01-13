@@ -1197,7 +1197,7 @@ public abstract class JenkinsPipelineSpecification extends Specification {
 				if( ! instrumented_objects.contains( likely_class_under_test ) ) {
 					addPipelineMocksToObjects( likely_class_under_test )
 				}
-			} catch( ClassNotFoundException cnfe ) {
+			} catch( ClassNotFoundException | NoClassDefFoundError cnfe ) {
 				// I guess the spec wasn't named like that
 			}
 		}
